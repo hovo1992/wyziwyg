@@ -1,12 +1,29 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Wyziwyg</title>
+	<title>Wiziwig</title>
+
 	<meta charset="utf-8" />
+
+	<link href="content/styles/wyziwyg.css" rel="stylesheet" />
+
+	<script src="script/jquery/jquery-3.1.0.js"></script>
+
+	<script src="script/ui.wrapper.jQuery.js"></script>
+
+	<script src="script/ui.panel.jquery.js"></script>
 </head>
 <body>
-	<container>
-		
-	</container>
+	<div id="container">
+
+	</div>
+
+	<script>
+
+		new Panel({
+			container: $('#container')
+		});
+
+	</script>
 </body>
 </html>
