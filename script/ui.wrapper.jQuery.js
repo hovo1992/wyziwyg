@@ -13,6 +13,18 @@ function (defaultOptions, options) {
 
 	that.$element = $(`<${options.tagName}>`);
 
+	that.setOptions = (json) => {
+		if (undefined == json.buttonbar) {
+			that.$element.attr('class', Panel.Buttonbar.EKeys[json.direction]);
+			that.panel.$element.attr('class', json.direction + 'Buttonbar');
+		} else {
+			that.$element.attr('class', json.buttonbar.direction + 'Buttonbar');
+			that.buttonbar.$element.attr('class', Panel.Buttonbar.EKeys[json.buttonbar.direction]);
+		}
+
+		return that;
+	};
+
 	that.append = (...elements) => {
 		elements.filter((element) => that.$element.append(element.$element || element));
 
@@ -20,19 +32,20 @@ function (defaultOptions, options) {
 	};
 
 	that.appendTo = (element) => {
-		that.$element.appendTo(element.$element || element);
+		that.$element.appendTo($(element.$element || element));
 
 		return that;
 	};
 
 	that.attr = (json) => {
+
 		that.$element.attr(json);
 
 		return that;
 	};
 
 	that.css = (json) => {
-		that.$element.css(json);
+		that.$element.css('background', 'red');
 
 		return that;
 	};

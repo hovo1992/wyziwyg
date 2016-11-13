@@ -7,11 +7,13 @@
 
 	<link href="content/styles/wyziwyg.css" rel="stylesheet" />
 
-	<script src="script/jquery/jquery-3.1.0.js"></script>
-
-	<script src="script/ui.wrapper.jQuery.js"></script>
-
+	<script src="script/prototype/prototype.js"></script>
+	<script src="script/ui.wrapper.prototype.js"></script>
 	<script src="script/ui.panel.jquery.js"></script>
+
+	<!--<script src="script/jquery/jquery-3.1.0.js"></script>-->
+	<!--<script src="script/ui.wrapper.jQuery.js"></script>-->
+	<!--<script src="script/ui.panel.jquery.js"></script>-->
 </head>
 <body>
 	<div id="container">
@@ -20,8 +22,22 @@
 
 	<script>
 
+		//["prototype/prototype", "ui.wrapper.prototype", "ui.panel.jquery"].forEach((item) => {
+		//	var script = document.createElement('script');
+
+		//	script.src = `script/${item}.js`;
+
+		//	document.getElementsByTagName('head')[0].appendChild(script);
+		//});
+
+		//window.setTimeout(function () {
+		//	new Panel({
+		//		container: '#container'
+		//	});
+		//}, 100);
+
 		new Panel({
-			container: $('#container')
+			container: '#container'
 		});
 
 	</script>

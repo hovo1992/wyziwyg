@@ -8,7 +8,7 @@
 		}
 	};
 
-	global.Panel.prototype = global.Wrapper.prototype;
+	global.Panel.prototype = Object.create(global.Wrapper.prototype);
 
 })('undefined' === typeof (window) ? this : window,
 function (options) {
@@ -16,6 +16,8 @@ function (options) {
 	'use strict';
 
 	var that = Wrapper.call(this, Panel.defaultOptions.panel, options.panel);
+
+	that.css({ 'background': 'green' });
 
 	that.appendTo(options.container);
 

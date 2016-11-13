@@ -5,3 +5,11 @@
 	user-select: none;
 	-webkit-user-select: none;
 }
+
+panel {
+	width: 100px;
+	height: 100px;
+
+	display: block;
+	background: #888;
+}
