@@ -14,11 +14,9 @@ function (defaultOptions, options) {
 
 	that.$element = document.createElement(options.tagName);
 
-	that.append = (...elements) => {
-		elements.filter((element) => (element.$element || element).insert(that.$element));
+	that.append = (...elements) => 	(elements.filter((element) => (element.$element || element).insert(that.$element)), that);
 
-		return that;
-	}; //insert
+	//insert
 
 	that.appendTo = (element) => {
 		//element.insert(that.$element);

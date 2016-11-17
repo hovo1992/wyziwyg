@@ -32,8 +32,7 @@ function (defaultOptions, options) {
 	};
 
 	that.appendTo = (element) => {
-		that.$element.appendTo($(element.$element || element));
-
+		that.$element.appendTo(element.$element || $(element));
 		return that;
 	};
 
