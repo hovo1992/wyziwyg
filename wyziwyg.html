@@ -15,17 +15,26 @@
 	<!--<script src="script/jquery/jquery-3.1.0.js"></script>-->
 	<!--<script src="script/ui.wrapper.jQuery.js"></script>-->
 	<script>
-		var libName = ELibraryNames.jquery//.name;
-	
-		[`${libName}/`, 'ui.wrapper.'].forEach((item) => {
-			var script = document.createElement('script');
-
-			script.src = `script/${item + libName}.js`;
+		var libName = ELibraryNames.jquery; //.name;
+		var script;
+		[`${libName}/${libName}`, `ui.wrapper.${libName}`, 'ui.panel'].forEach((item) => {
+			script = document.createElement('script');
+			
+			script.src = `script/${item}.js`;
 
 			document.head.appendChild(script);
 		});
+		//script.onload = () => document.scripts['panel'].src = ;
+
+		//setTimeout(function () {
+		//	var script = document.createElement('script');
+
+		//	script.src = 'script/ui.panel.js';
+
+		//	document.head.appendChild(script);
+		//}, 100); 
+
 	</script>
-	<script src="script/ui.panel.js"></script>
 </head>
 <body>
 	<div id="container">
@@ -33,16 +42,12 @@
 	</div>
 
 	<script>
-		setTimeout(function () {
-			new Panel({
+		document.body.onload = function () {
+			var panel = new Panel({
 				container: '#container'
 			});
-		}, 100);
-
-		new Panel({
-			container: '#container'
-		});
-
+			console.dir(panel);
+		};
 	</script>
 </body>
 </html>

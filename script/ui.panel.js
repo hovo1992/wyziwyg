@@ -9,6 +9,7 @@
 	};
 
 	global.Panel.prototype = Object.create(global.Wrapper.prototype);
+	global.Panel.prototype.constructor = global.Panel;
 
 })('undefined' === typeof (window) ? this : window,
 function (options) {
