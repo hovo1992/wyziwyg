@@ -7,9 +7,17 @@
 }
 
 panel {
+	width: 150px;
+	height: 150px;
+
+	display: block;
+	background: #888;
+}
+
+content {
 	width: 100px;
 	height: 100px;
 
 	display: block;
-	background: #888;
+	background: #4cff00;
 }

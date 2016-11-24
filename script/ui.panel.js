@@ -5,6 +5,9 @@
 	global.Panel.defaultOptions = {
 		panel: {
 			tagName: 'panel'
+		},
+		content: {
+			tagName: 'content'
 		}
 	};
 
@@ -16,11 +19,21 @@ function (options) {
 
 	'use strict';
 
-	var that = Wrapper.call(this, Panel.defaultOptions.panel, options.panel);
+	var that = Wrapper.call(this, Panel.defaultOptions.panel, options.panel),
+		content = Object.create(Panel.Content.prototype);
 
 	that.css({ 'background': 'green' });
 
-	that.appendTo(options.container);
+	Object.defineProperties(that, {
+		content: {
+			value: Panel.Content.call(content, options),
+			enumerable: true
+		}
+	});
+
+	that
+		.append(that.content)
+		.appendTo(options.container);
 
 	return that;
 });

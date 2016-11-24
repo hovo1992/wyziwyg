@@ -17,7 +17,7 @@
 	<script>
 		var libName = ELibraryNames.jquery; //.name;
 		var script;
-		[`${libName}/${libName}`, `ui.wrapper.${libName}`, 'ui.panel'].forEach((item) => {
+		[`${libName}/${libName}`, `ui.wrapper.${libName}`, 'ui.panel', 'ui.content'].forEach((item) => {
 			script = document.createElement('script');
 			
 			script.src = `script/${item}.js`;
